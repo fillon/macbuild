@@ -27,6 +27,11 @@ then
     brew install mercurial
 fi
 
+if [ ! -f ~/.ssh/id_rsa ]; then
+    echo "Generate ssh identity"
+    ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
+fi
+
 
 # Install Ansible (using pip is the officially supported way)
 # if ! pip2 show ansible > /dev/null 2>&1
