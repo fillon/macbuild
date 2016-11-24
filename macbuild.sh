@@ -29,6 +29,13 @@ then
     brew install mercurial
 fi
 
+# Download Ansible
+if [ ! -d ~/git/ansible ];
+then
+  echo "Download Ansible"
+  git clone git://github.com/ansible/ansible.git --recursive ~/git/ansible
+fi
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     echo "Generate ssh identity"
     ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
