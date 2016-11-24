@@ -36,6 +36,10 @@ then
   git clone git://github.com/ansible/ansible.git --recursive ~/git/ansible
 fi
 
+if [ ! -f ~/.profile ]; then
+  cp ~/git/macbuild/profile ~/.profile
+fi
+
 if [ ! -f ~/.ssh/id_rsa ]; then
     echo "Generate ssh identity"
     ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
