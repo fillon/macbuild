@@ -33,6 +33,8 @@ if [ ! -f ~/.ssh/id_rsa ]; then
     echo "Generate ssh identity"
     ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
     ssh-add ~/.ssh/id_rsa
+    echo "Go to bitbucket.org and add the SSH key"
+    cat ~/.ssh/id_rsa.pub
 fi
 
 if [ ! -f ~/.hgrc ]; then
