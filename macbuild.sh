@@ -1,5 +1,7 @@
 #!/bin/bash
 
+macbuild_dir=~/git/macbuild
+
 # Prompt the user for their sudo password
 sudo -v
 
@@ -30,6 +32,12 @@ fi
 if [ ! -f ~/.ssh/id_rsa ]; then
     echo "Generate ssh identity"
     ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
+    ssh-add ~/.ssh/id_rsa
+fi
+
+if [ ! -f ~/.hgrc ]; then
+  echo "Copy .hgrc"
+  cp ${macbuild_dir}/hgrc ~/.hgrc
 fi
 
 
